@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Fragments;
 
 
 import android.app.ProgressDialog;
@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import user.domain.net.meal2go.Activities.MainActivity;
+import user.domain.net.meal2go.R;
 
 
 /**

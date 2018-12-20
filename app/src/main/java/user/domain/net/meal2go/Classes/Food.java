@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Classes;
 
 public class Food {
     public Food(int food_id, int category_id, String food_caption, double food_cost, String food_name, String food_photo) {

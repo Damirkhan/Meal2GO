@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Classes;
 
 public class User {
     private String user_id;

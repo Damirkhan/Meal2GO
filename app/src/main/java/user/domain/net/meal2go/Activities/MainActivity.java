@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -7,16 +7,24 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.ViewDragHelper;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ListView;
 
 import java.lang.reflect.Field;
+
+import user.domain.net.meal2go.Adapters.MenuAdapter;
+import user.domain.net.meal2go.Classes.Category;
+import user.domain.net.meal2go.R;
+import user.domain.net.meal2go.Fragments.aboutFragment;
+import user.domain.net.meal2go.Fragments.favoriteFragment;
+import user.domain.net.meal2go.Fragments.menuFragment;
+import user.domain.net.meal2go.Fragments.orderFragment;
+import user.domain.net.meal2go.Fragments.profileFragment;
 
 public class MainActivity extends AppCompatActivity
     implements NavigationView.OnNavigationItemSelectedListener,BottomNavigationView.OnNavigationItemSelectedListener {
@@ -24,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawerLayout;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,6 +85,7 @@ public class MainActivity extends AppCompatActivity
             bottomNavigationView.setOnNavigationItemSelectedListener(this);
             bottomNavigationView.setSelectedItemId(R.id.nav_menu);
         }
+
 
 
 
@@ -139,4 +149,9 @@ public class MainActivity extends AppCompatActivity
         Intent intent = new Intent(this,CartActivity.class);
         startActivity(intent);
     }
+
+
+
+
+
 }
