@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "160537886353",
+    "firebase_url": "https://meal2go-32099.firebaseio.com",
+    "project_id": "meal2go-32099",
+    "storage_bucket": "meal2go-32099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:160537886353:android:2edbdb94b976fd96",
+        "android_client_info": {
+          "package_name": "user.domain.net.meal2go"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "160537886353-fm9leuat954p4oi8f5b2o78a4j2cp9hk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "user.domain.net.meal2go",
+            "certificate_hash": "d1feb83129e7061dda2483d5e8b2849902440026"
+          }
+        },
+        {
+          "client_id": "160537886353-cgi2u9upd09gu7h0gd7l42ghekqu95ds.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2IXOGzhZTjIIowAI9hGC0j0Cpib42bZE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "160537886353-cgi2u9upd09gu7h0gd7l42ghekqu95ds.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
