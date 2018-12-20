@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Meal2GO");
         toolbar.setTitleMarginStart(270);
-        //toolbar.setLogo(R.drawable.logo);
 
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
