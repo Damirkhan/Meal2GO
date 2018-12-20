@@ -1,91 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="150dp"
     android:layout_marginStart="4dp"
-    android:layout_marginEnd="4dp"
-    android:layout_height="215dp">
+    android:layout_marginEnd="4dp">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/category_cardview"
-        android:layout_width="0dp"
-        android:layout_height="192dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="4dp"
-        app:cardBackgroundColor="@android:color/white"
-        app:cardCornerRadius="16dp"
-        app:cardPreventCornerOverlap="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <android.support.constraint.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <uz.androidmk.fooddelivery.Utils.RobotoBold
-                android:id="@+id/food_price"
-                android:layout_width="72dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="6dp"
-                android:background="@drawable/bc_price_yellow"
-                android:gravity="center"
-                android:text="16.000"
-                android:textColor="@color/activeColorDarkGreen"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintDimensionRatio="H,20:5"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <ImageView
-                android:id="@+id/food_image"
-                android:layout_width="120dp"
-                android:layout_height="90dp"
-                android:layout_marginTop="4dp"
-                android:src="@drawable/category_food"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/food_price" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/category_cardview"
+            android:layout_width="220dp"
+            android:layout_height="150dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="12dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
             <TextView
-                android:id="@+id/food_name"
+                android:id="@+id/category_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_marginBottom="14sp"
-                android:text="Sandwiches"
-                android:textColor="@color/activeColorDarkGreen"
-                android:textSize="18sp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="0dp"
+                android:text="Pizza"
+                android:textColor="@android:color/black"
+
+                android:textSize="32sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.556"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/food_image" />
+                app:layout_constraintStart_toStartOf="parent" />
 
-        </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/category_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:paddingBottom="5dp"
 
-    </android.support.v7.widget.CardView>
+                android:requiresFadingEdge="none|horizontal|vertical"
+                android:text="25 items"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="22sp"
+                tools:fontFamily="sans-serif" />
 
 
-    <Button
-        android:id="@+id/btn_oook"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@drawable/btn_ok_white"
-        android:gravity="center"
-        android:text="OOOK"
-        android:elevation="4dp"
-        android:textAlignment="center"
-        android:paddingBottom="5dp"
-        android:textColor="@color/activeColorGreen"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/category_cardview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/category_cardview"
-        app:layout_constraintVertical_bias="0.0" />
+        </android.support.v7.widget.CardView>
 
-</android.support.constraint.ConstraintLayout>
+        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+            android:id="@+id/category_image"
+            android:layout_width="110dp"
+
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="25dp"
+            android:elevation="4dp"
+            android:src="@drawable/logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+            android:id="@+id/btn_arrow"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="60dp"
+            android:elevation="4dp"
+            android:src="@drawable/next"
+            app:hasBorder="false" />
+
+    </RelativeLayout>
+</LinearLayout>

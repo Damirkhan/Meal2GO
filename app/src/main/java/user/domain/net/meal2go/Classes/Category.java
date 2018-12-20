@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Classes;
 
 public class Category {
     public Category(int count, String category_name, String category_photo) {

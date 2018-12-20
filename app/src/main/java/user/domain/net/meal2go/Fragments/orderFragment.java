@@ -1,4 +1,4 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Fragments;
 
 
 import android.os.Bundle;
@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import user.domain.net.meal2go.R;
+
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class favoriteFragment extends Fragment {
+public class orderFragment extends Fragment {
 
 
-    public favoriteFragment() {
+    public orderFragment() {
         // Required empty public constructor
     }
 
@@ -23,7 +25,7 @@ public class favoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        return inflater.inflate(R.layout.fragment_order, container, false);
     }
 
 }

@@ -1,8 +1,12 @@
-package user.domain.net.meal2go;
+package user.domain.net.meal2go.Activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+
+import user.domain.net.meal2go.R;
+import user.domain.net.meal2go.Fragments.loginFragment;
+import user.domain.net.meal2go.Fragments.signupFragment;
 
 public class AuthActivity extends AppCompatActivity {
 

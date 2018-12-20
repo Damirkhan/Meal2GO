@@ -11,14 +11,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name=".Activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity
-            android:name=".CartActivity"
+            android:name=".Activities.CartActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AuthActivity"
+            android:name=".Activities.AuthActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
