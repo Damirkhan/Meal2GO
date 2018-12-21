@@ -4,6 +4,8 @@ package user.domain.net.meal2go.Fragments;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +15,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.concurrent.Executor;
+
 import user.domain.net.meal2go.Activities.MainActivity;
+import user.domain.net.meal2go.Database;
 import user.domain.net.meal2go.R;
 
 
@@ -22,7 +33,7 @@ import user.domain.net.meal2go.R;
  */
 public class signupFragment extends Fragment {
 
-
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     EditText signup_name;
     EditText signup_email;
@@ -75,18 +86,17 @@ public class signupFragment extends Fragment {
         progressDialog.show();
 
         String name = signup_name.getText().toString();
-        String email = signup_email.getText().toString();
-        String password = signup_password.getText().toString();
+        final String email = signup_email.getText().toString();
+        final String password = signup_password.getText().toString();
 
         // TODO: Implement your own signup logic here.
-
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
                         // On complete call either onSignupSuccess or onSignupFailed
                         // depending on success
-                        onSignupSuccess();
-                        // onSignupFailed();
+                       createAccount(email,password);
+                        //
                         progressDialog.dismiss();
                     }
                 }, 3000);
@@ -107,7 +117,32 @@ public class signupFragment extends Fragment {
         signup_btn.setEnabled(true);
     }
 
+    public void createAccount(String email, String password) {
 
+
+        // [START create_user_with_email]
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            onSignupSuccess();
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            onSignupFailed();
+                        }
+
+                        // [START_EXCLUDE]
+                        // hideProgressDialog();
+                        // [END_EXCLUDE]
+                    }
+                });
+        // [END create_user_with_email]
+    }
     public boolean validate() {
         boolean valid = true;
 

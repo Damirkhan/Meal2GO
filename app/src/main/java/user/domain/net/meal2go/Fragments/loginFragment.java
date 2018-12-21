@@ -4,6 +4,7 @@ package user.domain.net.meal2go.Fragments;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +14,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.concurrent.Executor;
+
+import user.domain.net.meal2go.Activities.AuthActivity;
 import user.domain.net.meal2go.Activities.MainActivity;
+import user.domain.net.meal2go.Database;
 import user.domain.net.meal2go.R;
 
 
@@ -25,6 +36,7 @@ public class loginFragment extends Fragment {
 
     private static final String TAG = "loginFragment";
     private static final int REQUEST_SIGNUP = 0;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
     EditText login_email;
     EditText login_password;
@@ -76,17 +88,17 @@ public class loginFragment extends Fragment {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = login_email.getText().toString();
-        String password = login_password.getText().toString();
+        final String email = login_email.getText().toString();
+        final String password = login_password.getText().toString();
 
         // TODO: Implement your own authentication logic here.
+
 
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
                         // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
+                        signIn(email,password);
                         progressDialog.dismiss();
                     }
                 }, 3000);
@@ -144,6 +156,41 @@ public class loginFragment extends Fragment {
         }
     }
 
+
+    public void signIn(String email, String password) {
+
+
+
+
+
+        // [START sign_in_with_email]
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(getActivity(),
+                new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            onLoginSuccess();
+                           // login_status = 1;
+                        }
+                        else
+                        {
+                            //login_status = 0;
+                            onLoginFailed();
+
+                        }
+
+
+                        // hideProgressDialog();
+
+                    }
+                });
+        // [END sign_in_with_email]
+       // return login_status;
+    }
 
 
 }
