@@ -79,6 +79,7 @@
         <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
             android:id="@+id/btn_arrow"
             android:layout_width="50dp"
+            android:onClick="moveToFoodsAction"
             android:layout_height="50dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
@@ -87,7 +88,8 @@
             android:layout_marginBottom="60dp"
             android:elevation="4dp"
             android:src="@drawable/next"
-            app:hasBorder="false" />
+            app:hasBorder="false"
+            />
 
     </RelativeLayout>
 </LinearLayout>

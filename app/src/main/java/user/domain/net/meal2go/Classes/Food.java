@@ -10,6 +10,8 @@ public class Food {
         this.food_photo = food_photo;
     }
 
+
+
     public int getFood_id() {
         return food_id;
     }

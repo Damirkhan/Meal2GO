@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.beardedhen.androidbootstrap.BootstrapCircleThumbnail;
 
 import user.domain.net.meal2go.Classes.Category;
+import user.domain.net.meal2go.Fragments.menuFragment;
 import user.domain.net.meal2go.R;
 
 
@@ -49,6 +50,7 @@ public class MenuAdapter extends ArrayAdapter {
         TextView nameTextField = rowView.findViewById(R.id.category_name);
         TextView countField = rowView.findViewById(R.id.category_count);
         BootstrapCircleThumbnail imageView = rowView.findViewById(R.id.category_image);
+
 //
 //        ViewGroup.LayoutParams params = rowView.getLayoutParams();
 //

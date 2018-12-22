@@ -1,14 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.profileFragment">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.beardedhen.androidbootstrap.BootstrapCircleThumbnail
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center"
+        android:layout_margin="15dp"
+        android:src="@drawable/logo"
+        android:id="@+id/imageContact"
+        android:layout_weight="2"/>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.9"
+        android:layout_marginHorizontal="15dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/NameContact"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginBottom="5dp"
+            android:text="John McKinney"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:text="Mobile"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+998 90 9099999"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:id="@+id/PhoneContact"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_margin="5dp"
+            android:text="Email"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="info@meal2go.com"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:id="@+id/idContact"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order list"/>
+    </LinearLayout>
+
+</LinearLayout>

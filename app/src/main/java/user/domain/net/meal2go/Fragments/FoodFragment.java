@@ -15,21 +15,24 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import user.domain.net.meal2go.Adapters.FoodAdapter;
 import user.domain.net.meal2go.Adapters.MenuAdapter;
 import user.domain.net.meal2go.Classes.Category;
+import user.domain.net.meal2go.Classes.Food;
 import user.domain.net.meal2go.R;
-
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class menuFragment extends Fragment {
-    private int i=0;
-    ListView listView;
-    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    DatabaseReference category = mDatabase.child("category");
+public class FoodFragment extends Fragment {
 
-    public menuFragment() {
+    private int i=0;
+    ListView foodlistview;
+    private DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+    DatabaseReference foodlist = mDatabase.child("category");
+
+
+    public FoodFragment() {
         // Required empty public constructor
     }
 
@@ -38,17 +41,21 @@ public class menuFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_menu, container, false);
-        final Category menu_category[]  = new Category[2];
-        menu_category[0] = new Category(13,"Snacks","R.id.logo");
-        menu_category[1] = new Category(13,"Snacks","R.id.logo");
+        View view =  inflater.inflate(R.layout.fragment_food, container, false);
 
-//        category.addValueEventListener(new ValueEventListener() {
+        final Food food_list[]  = new Food[2];
+        food_list[0] = new Food(1,121,"This is fucking caption",125,"Margarita",
+                "https://firebasestorage.googleapis.com/v0/b/meal2go-32099.appspot.com/o/girl_bw_hair_127085_2160x3840.jpg?alt=media&token=de40683a-d305-4ea1-80b5-2aa2cce5103a");
+        food_list[1] = new Food(1,121,"This is fucking caption",125,"Margarita",
+                "https://firebasestorage.googleapis.com/v0/b/meal2go-32099.appspot.com/o/girl_bw_hair_127085_2160x3840.jpg?alt=media&token=de40683a-d305-4ea1-80b5-2aa2cce5103a");
+
+//        foodlist.addValueEventListener(new ValueEventListener() {
 //            @Override
 //            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 //                for (DataSnapshot data: dataSnapshot.getChildren() ) {
 //
-//                    menu_category[i] = new Category(24,"Pizza","R.id.logo");
+//                    food_list[i] = new Food(1,121,"This is fucking caption",125,"Margarita",
+//                            "https://firebasestorage.googleapis.com/v0/b/meal2go-32099.appspot.com/o/girl_bw_hair_127085_2160x3840.jpg?alt=media&token=de40683a-d305-4ea1-80b5-2aa2cce5103a");
 //                    ++i;
 //                }
 //            }
@@ -59,14 +66,12 @@ public class menuFragment extends Fragment {
 //            }
 //        });
 
-        MenuAdapter list = new MenuAdapter(getActivity(),menu_category);
-        listView = view.findViewById(R.id.menu_list);
-        listView.setAdapter(list);
+        FoodAdapter list = new FoodAdapter(getActivity(),food_list);
+        foodlistview = view.findViewById(R.id.food_list);
+        foodlistview.setAdapter(list);
 
 
-
-        return view;
+        return  view;
     }
-
 
 }

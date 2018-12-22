@@ -1,6 +1,7 @@
 package user.domain.net.meal2go.Activities;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.NavigationView;
@@ -13,12 +14,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.lang.reflect.Field;
 
 import user.domain.net.meal2go.Adapters.MenuAdapter;
 import user.domain.net.meal2go.Classes.Category;
+import user.domain.net.meal2go.Fragments.FoodFragment;
 import user.domain.net.meal2go.R;
 import user.domain.net.meal2go.Fragments.aboutFragment;
 import user.domain.net.meal2go.Fragments.favoriteFragment;
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity
     private DrawerLayout drawerLayout;
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
+    ImageButton cart;
 
 
     @Override
@@ -40,8 +45,10 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
+        cart = findViewById(R.id.cart_button);
         toolbar.setTitle("Meal2GO");
         toolbar.setTitleMarginStart(270);
+
 
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
@@ -148,6 +155,12 @@ public class MainActivity extends AppCompatActivity
     public void CartPressAction(View view) {
         Intent intent = new Intent(this,CartActivity.class);
         startActivity(intent);
+    }
+
+    public void moveToFoodsAction(View v){
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.fragment_container, new FoodFragment()).commit();
+
     }
 
 

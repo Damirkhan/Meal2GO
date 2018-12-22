@@ -1,44 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.card.MaterialCardView
+<LinearLayout
+    android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardBackgroundColor="@android:color/white"
-    app:cardElevation="2dp"
-    app:cardPreventCornerOverlap="true">
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_height="215dp">
 
-        <com.android.volley.toolbox.NetworkImageView
-            android:id="@+id/product_image"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:background="?attr/colorPrimaryDark"
-            android:scaleType="centerCrop" />
+        <android.support.v7.widget.CardView
+            android:id="@+id/category_cardview"
+            android:layout_width="0dp"
+            android:layout_height="192dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="4dp"
+            app:cardBackgroundColor="@color/background"
+            app:cardCornerRadius="8dp"
+            app:cardPreventCornerOverlap="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <TextView
-                android:id="@+id/product_title"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Product title"
-                android:textAppearance="?attr/textAppearanceHeadline6" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/product_price"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Product description"
-                android:textAppearance="?attr/textAppearanceBody2" />
-        </LinearLayout>
-    </LinearLayout>
-</android.support.design.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/food_price"
+                    android:layout_width="72dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bc_price_yellow"
+                    android:gravity="center"
+                    android:text="16.000"
+                    android:textColor="@color/activeColorDarkGreen"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintDimensionRatio="H,20:5"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/food_image"
+                    android:layout_width="120dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/food_price" />
+
+                <TextView
+                    android:id="@+id/food_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginBottom="14sp"
+                    android:text="Sandwiches"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/food_image" />
+
+            </android.support.constraint.ConstraintLayout>
+
+        </android.support.v7.widget.CardView>
+
+
+        <Button
+            android:clickable="true"
+            android:id="@+id/add_to_cart"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:background="@drawable/btn_ok_white"
+            android:gravity="center"
+            android:text="Add to cart"
+            android:elevation="4dp"
+            android:textAlignment="center"
+            android:paddingBottom="5dp"
+            android:textColor="@color/activeColorGreen"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/category_cardview"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/category_cardview"
+            app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
