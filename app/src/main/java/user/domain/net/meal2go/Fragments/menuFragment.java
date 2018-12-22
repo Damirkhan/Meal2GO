@@ -45,7 +45,7 @@ public class menuFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot data: dataSnapshot.getChildren() ) {
-                    
+
                     menu_category[i] = new Category(24,"Pizza","R.id.logo");
                     ++i;
                 }
